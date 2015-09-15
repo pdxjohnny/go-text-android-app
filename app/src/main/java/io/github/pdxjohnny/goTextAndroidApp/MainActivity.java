@@ -4,7 +4,7 @@
  * license that can be found in the LICENSE file.
  */
 
-package org.golang.example.bind;
+package io.github.pdxjohnny.goTextAndroidApp;
 
 import android.app.Activity;
 import android.os.Bundle;
