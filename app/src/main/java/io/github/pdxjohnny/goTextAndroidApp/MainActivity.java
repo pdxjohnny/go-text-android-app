@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
         mTextView = (TextView) findViewById(R.id.mytextview);
 
         // Call Go function.
+        Hello.StartWeb();
         String greetings = Hello.Greetings("Android and Gopher");
         mTextView.setText(greetings);
     }
