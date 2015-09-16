@@ -7,12 +7,8 @@
 package io.github.pdxjohnny.goTextAndroidApp;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Telephony;
-import android.view.View;
-import android.widget.Button;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,14 +29,16 @@ public class MainActivity extends Activity {
 //            intent.putExtra(Telephony.Sms.Intents.EXTRA_PACKAGE_NAME, myPackageName);
 //            startActivity(intent);
 //        }
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Started", Toast.LENGTH_SHORT).show();
 
         setContentView(R.layout.activity_main);
         mTextView = (TextView) findViewById(R.id.mytextview);
 
         // Call Go function.
-        Hello.StartWeb();
         String greetings = Hello.Greetings("Android and Gopher");
         mTextView.setText(greetings);
+        Hello.SmsManager sms = new AndroidSmsManager();
+        Hello.StartWeb(sms);
+        Log.i("MainActivity", "onCreate() Finished");
     }
 }
